@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Craft Studio — Eda Acara, PhD | Inclusive Planning &amp; Policy Tools</title>
+  <meta name="description" content="Future Craft Studio, founded by Dr. Eda Acara, helps municipalities, consultants, and mission-driven teams embed equity and inclusion into planning, procurement, and policy through practical tools and advisory support." />
+  <meta property="og:title" content="Future Craft Studio — Inclusive Planning &amp; Policy Tools" />
+  <meta property="og:description" content="Founded by Dr. Eda Acara, PhD in Geography and Planning. Practical equity and inclusion tools for cities and mission-driven teams." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://api.fontshare.com/v2/css?f[]=switzer@300,400,500,600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#" class="nav-logo" aria-label="Future Craft Studio home">
+        <img src="fcs-logo-mark.jpg" alt="" class="nav-logo-mark" aria-hidden="true" />
+        <span class="nav-logo-text">Future Craft Studio</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="equicity.html">EquiCity</a></li>
+        <li><a href="#credentials">Credentials</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a call</button>
+        <button class="theme-toggle icon-btn" data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="nav-menu-btn icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" id="mobileNav" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#services" class="mobile-nav-link">Services</a></li>
+        <li><a href="equicity.html" class="mobile-nav-link">EquiCity</a></li>
+        <li><a href="#credentials" class="mobile-nav-link">Credentials</a></li>
+        <li><a href="#booking" class="mobile-nav-link mobile-nav-cta">Book a 15-min call →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-inner">
+        <div class="hero-text fade-in">
+          <div class="hero-eyebrow">Dr. Eda Acara, PhD · Founder</div>
+          <h1 class="hero-heading">Inclusive planning tools<br /><em>that actually get used.</em></h1>
+          <p class="hero-sub">I help organizations turn complex social and policy challenges into actionable outcomes — through research, advisory support, training, and learning simulations built on 20+ years of academic and field experience.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a free 15-min call</button>
+            <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="btn btn-ghost">Try the EquiCity Quickscan</a>
+          </div>
+          <div class="hero-trust">
+            <span class="trust-item">World Bank</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">EBRD</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">UNDP</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">MedECC</span>
+            <span class="trust-sep">·</span>
+            <span class="trust-item">Arup</span>
+          </div>
+        </div>
+        <div class="hero-portrait fade-in" style="animation-delay:0.15s;">
+          <div class="portrait-frame portrait-frame--photo">
+            <img src="eda.jpg" alt="Dr. Eda Acara, founder of Future Craft Studio" class="portrait-photo" />
+          </div>
+        </div>
+      </div>
+      <!-- Background grid -->
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- FOUNDER SECTION -->
+    <section class="about section-pad" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-left fade-in">
+            <div class="section-label">About the founder</div>
+            <h2 class="section-heading">Researcher, educator, and policy practitioner — across cities, climate, and social change.</h2>
+          </div>
+          <div class="about-right fade-in">
+            <p>I'm Dr. Eda Acara — a Turkish-Canadian geographer, policy researcher, and educator with a PhD in Geography and Planning from Queen's University, a Master's in Gender and Women's Studies from Saint Mary's University, and a Bachelor's in Sociology from Middle East Technical University.</p>
+            <p>My work sits at the intersection of urban studies, environmental policy, gender, migration, and climate change. Over two decades I've taught university courses, led funded research projects, and worked as a policy and development consultant for the World Bank, EBRD, and UNDP — on everything from Green City Action Plans for Istanbul and Ankara, to Turkey's Irrigation Modernization Project, to a UNDP climate and biodiversity program. I'm a Coordinating Lead Author for MedECC's Special Report on Environmental Change, Conflict, and Human Migration, and a former Research Fellow at Istanbul Policy Center, Sabancı University / Tufts Climate Policy Lab.</p>
+            <p>Future Craft Studio is how I bring that depth directly to the organizations that need it — as advisory support, training workshops, learning simulations, and practical diagnostic tools.</p>
+            <div class="credentials-row">
+              <div class="cred-item">
+                <div class="cred-num">20+</div>
+                <div class="cred-label">Years of experience</div>
+              </div>
+              <div class="cred-item">
+                <div class="cred-num">10+</div>
+                <div class="cred-label">International projects</div>
+              </div>
+              <div class="cred-item">
+                <div class="cred-num">10+</div>
+                <div class="cred-label">Peer-reviewed publications</div>
+              </div>
+            </div>
+            <a href="#booking" class="btn btn-outline" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Talk to Eda →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services section-pad" id="services">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">What I offer</div>
+          <h2 class="section-heading">Research, training, tools, and advisory — built around your context</h2>
+          <p class="section-sub">Whether you need a rapid diagnostic, a deep policy engagement, a custom training workshop, or a learning simulation — I work with you to figure out what will actually make a difference.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card fade-in">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <h3>Gender &amp; Social Screening</h3>
+            <p>Social screening assessments and gender analysis for infrastructure, energy, and investment projects — including solar power, irrigation, and urban green infrastructure. Delivered to World Bank and EBRD standards.</p>
+            <div class="service-for">For: development banks, project proponents, consultancies</div>
+            <a href="#booking" class="service-link" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Discuss your project →</a>
+          </div>
+          <div class="service-card fade-in" style="animation-delay:0.08s">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <h3>Green City &amp; Climate Policy Advisory</h3>
+            <p>Gender mainstreaming and social inclusion support for Green City Action Plans, climate policy tools, and just transition frameworks. Grounded in field experience across Istanbul, Ankara, and national-level climate programs.</p>
+            <div class="service-for">For: municipalities, EBRD/World Bank-financed programs, climate initiatives</div>
+            <a href="#booking" class="service-link" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a session →</a>
+          </div>
+          <div class="service-card fade-in" style="animation-delay:0.16s">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3>Training, Workshops &amp; Learning Simulations</h3>
+            <p>Custom training modules, interactive workshops, and teaching and learning simulations on gender and social inclusion, climate justice, urban resilience, and policy analysis. Grounded in 20+ years of university teaching and field-based learning design. Delivered in English and Turkish.</p>
+            <div class="service-for">For: universities, UN agencies, government institutions, NGOs</div>
+            <a href="#booking" class="service-link" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Let's talk →</a>
+          </div>
+          <div class="service-card fade-in" style="animation-delay:0.24s">
+            <div class="service-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10,9 9,9 8,9"/></svg>
+            </div>
+            <h3>EquiCity Quickscan &amp; Diagnostics</h3>
+            <p>A rapid 10-question inclusion diagnostic for any project or plan — identifying equity gaps in procurement, participation, reporting, and investment in under 30 minutes. Includes scored report and recommended next steps.</p>
+            <div class="service-for">For: city teams, consultants, program managers</div>
+            <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="service-link">Start the scan →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EQUICITY PRODUCT SPOTLIGHT -->
+    <section class="equicity section-pad" id="equicity">
+      <div class="container">
+        <div class="equicity-inner">
+          <div class="equicity-text fade-in">
+            <div class="section-label">Featured product</div>
+            <h2 class="section-heading">EquiCity Quickscan</h2>
+            <p class="equicity-desc">Not sure where inclusion gaps exist in your project or plan? The EquiCity Quickscan is the fastest way to find out — and to communicate that assessment to your team and stakeholders.</p>
+            <div class="equicity-steps">
+              <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                  <strong>Complete the 10-question scan</strong>
+                  <span>Takes under 30 minutes. No prep required.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                  <strong>Receive your inclusion score</strong>
+                  <span>A clear report showing where your approach is strong and where gaps exist.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                  <strong>Decide your next step</strong>
+                  <span>Go deeper with the Indicator Starter Set, or book a debrief with Eda directly.</span>
+                </div>
+              </div>
+            </div>
+            <div class="equicity-ctas">
+              <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="btn btn-primary">Take the Quickscan</a>
+              <span class="equicity-note">Free · No obligation · 15 minutes</span>
+            </div>
+          </div>
+          <div class="equicity-visual fade-in">
+            <div class="scan-card">
+              <div class="scan-card-header">
+                <div class="scan-logo">
+                  <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <circle cx="16" cy="16" r="14" stroke="var(--color-primary)" stroke-width="1.5"/>
+                    <circle cx="16" cy="10" r="3" fill="var(--color-primary)"/>
+                    <circle cx="10" cy="20" r="2.5" fill="var(--color-primary)" opacity="0.7"/>
+                    <circle cx="22" cy="20" r="2.5" fill="var(--color-primary)" opacity="0.7"/>
+                    <line x1="16" y1="13" x2="10" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/>
+                    <line x1="16" y1="13" x2="22" y2="20" stroke="var(--color-primary)" stroke-width="1" opacity="0.5"/>
+                  </svg>
+                  EquiCity Quickscan
+                </div>
+                <div class="scan-badge">Free</div>
+              </div>
+              <div class="scan-score-area">
+                <div class="score-ring">
+                  <svg viewBox="0 0 120 120" class="score-svg">
+                    <circle cx="60" cy="60" r="48" fill="none" stroke="var(--color-surface-offset)" stroke-width="8"/>
+                    <circle cx="60" cy="60" r="48" fill="none" stroke="var(--color-primary)" stroke-width="8"
+                      stroke-dasharray="251.3" stroke-dashoffset="75" stroke-linecap="round"
+                      transform="rotate(-90 60 60)" class="score-arc"/>
+                  </svg>
+                  <div class="score-label">
+                    <span class="score-num">7.2</span>
+                    <span class="score-of">/10</span>
+                  </div>
+                </div>
+                <div class="score-areas">
+                  <div class="score-area-item">
+                    <div class="score-area-name">Procurement</div>
+                    <div class="score-area-bar"><div class="score-area-fill" style="width:80%"></div></div>
+                  </div>
+                  <div class="score-area-item">
+                    <div class="score-area-name">Participation</div>
+                    <div class="score-area-bar"><div class="score-area-fill" style="width:65%"></div></div>
+                  </div>
+                  <div class="score-area-item">
+                    <div class="score-area-name">Reporting</div>
+                    <div class="score-area-bar"><div class="score-area-fill" style="width:55%"></div></div>
+                  </div>
+                  <div class="score-area-item">
+                    <div class="score-area-name">Investment</div>
+                    <div class="score-area-bar"><div class="score-area-fill" style="width:72%"></div></div>
+                  </div>
+                </div>
+              </div>
+              <div class="scan-cta-inline">
+                <button class="btn btn-primary btn-sm" style="width:100%" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Get your scan results</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS / TRUST -->
+    <section class="credentials section-pad" id="credentials">
+      <div class="container">
+        <div class="section-header fade-in">
+          <div class="section-label">Expertise &amp; recognition</div>
+          <h2 class="section-heading">Research-backed. Field-tested.</h2>
+        </div>
+        <div class="cred-grid">
+          <div class="cred-card fade-in">
+            <div class="cred-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <h3>Academic foundation</h3>
+            <p>PhD in Geography and Planning, Queen's University (2015). MA in Gender and Women's Studies, St. Mary's University. BA in Sociology, METU. Published in the <em>Annals of the Association of American Geographers</em>, <em>Urban Geography</em>, and <em>Fe Journal</em>. Co-edited book: <em>Unfinished Revolution: Urban Politics and Practices in Turkey</em> (Bilgi University Press, 2022).</p>
+          </div>
+          <div class="cred-card fade-in" style="animation-delay:0.08s">
+            <div class="cred-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+            </div>
+            <h3>International project experience</h3>
+            <p>Gender &amp; Economic Inclusion Expert, EBRD Green City Action Plans — Istanbul &amp; Ankara (Arup, 2021–2024). Social Expert, World Bank Turkey Organized Industry Zones (2023–2024). Gender &amp; Irrigation Specialist, World Bank Irrigation Modernization Project (2019–2023). Gender Mainstreaming Consultant, UNDP Türkiye (2025). Local Gender Expert, UNDP GEF SWAP Initiative (2024).</p>
+          </div>
+          <div class="cred-card fade-in" style="animation-delay:0.16s">
+            <div class="cred-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            </div>
+            <h3>Awards &amp; recognition</h3>
+            <p>Şirin Tekeli Research Award, Sabancı University (2021). Emerging Scholar Award, <em>Gender, Place &amp; Culture Journal</em> (2019). SSHRC Doctoral Award, Canada (2012–2014). AAG Thesis Dissertation Award (2013). R.S. McLaughlin Fellowship, Queen's University. Best Short Film Script, 3rd Nisi Masa European Contest, France (2004).</p>
+          </div>
+          <div class="cred-card fade-in" style="animation-delay:0.24s">
+            <div class="cred-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Policy &amp; research leadership</h3>
+            <p>Contributing Lead Author, MedECC Special Report: <em>Environmental Change, Conflict and Human Migration</em> (2021–present). IPC Research Fellow &amp; Coordinator, Raising Ambition Project — Sabancı University &amp; Tufts Climate Policy Lab (2023–2025). Sessional Lecturer, University of Calgary, Dept. of Sociology (2026).</p>
+          </div>
+        </div>
+
+        <div class="org-strip fade-in">
+          <div class="org-label">Clients &amp; institutions</div>
+          <div class="org-logos">
+            <span class="org-name">World Bank</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">EBRD</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">UNDP</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Arup</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">MedECC</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Istanbul Metropolitan Municipality</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Bursa Metropolitan Municipality</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Ankara Metropolitan Municipality</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Rosa Luxemburg Foundation</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Tufts Climate Policy Lab</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">Sabancı University Istanbul Policy Center</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">GREEN Engineering</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">MRC Engineering Türkiye</span>
+            <span class="org-sep">—</span>
+            <span class="org-name">ACE Consulting and Engineering Inc.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOKING FUNNEL -->
+    <section class="booking section-pad" id="booking">
+      <div class="container">
+        <div class="booking-inner">
+          <div class="booking-left fade-in">
+            <div class="section-label">Work with me</div>
+            <h2 class="booking-heading">Let's talk for 15 minutes.</h2>
+            <p class="booking-sub">No pitch, no pressure. We'll figure out together whether Future Craft Studio is the right fit for what you're working on.</p>
+
+            <div class="booking-what">
+              <div class="booking-what-title">What we'll cover:</div>
+              <ul role="list" class="booking-checklist">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Your current project or challenge
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Whether a scan, advisory, or workshop fits best
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  A clear next step, whatever you decide
+                </li>
+              </ul>
+            </div>
+
+            <div class="booking-bio-mini">
+              <div class="bio-avatar">EA</div>
+              <div class="bio-text">
+                <strong>Dr. Eda Acara</strong>
+                <span>Founder, Future Craft Studio</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-right fade-in">
+            <div class="booking-form-card">
+              <div class="form-header">
+                <h3>Book your 15-min call</h3>
+                <p>Free · Typically confirmed within 24 hours</p>
+              </div>
+              <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xrerboqn" method="POST" novalidate>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Jane" required autocomplete="given-name" />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Smith" required autocomplete="family-name" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="email">Work email</label>
+                  <input type="email" id="email" name="email" placeholder="jane@organization.com" required autocomplete="email" />
+                </div>
+                <div class="form-group">
+                  <label for="org">Organization</label>
+                  <input type="text" id="org" name="org" placeholder="City of Toronto" autocomplete="organization" />
+                </div>
+                <div class="form-group">
+                  <label for="context">What are you working on? <span class="label-hint">(optional)</span></label>
+                  <textarea id="context" name="context" rows="3" placeholder="Briefly describe your project, challenge, or what you want to discuss…"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="service">Which service interests you most?</label>
+                  <select id="service" name="service">
+                    <option value="">Select one…</option>
+                    <option value="quickscan">EquiCity Quickscan</option>
+                    <option value="advisory">Advisory &amp; Strategy</option>
+                    <option value="capacity">Capacity Building Workshop</option>
+                    <option value="assessment">Gender &amp; Social Impact Assessment</option>
+                    <option value="unsure">Not sure yet</option>
+                  </select>
+                </div>
+                <!-- Honeypot: bots fill this, humans don't -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+                <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">
+                  <span class="btn-label">Request a time →</span>
+                  <span class="btn-loading" hidden>Sending…</span>
+                </button>
+                <p class="form-note">Your info is only used to schedule the call. No spam, ever.</p>
+              </form>
+              <div class="form-success" id="formSuccess" hidden>
+                <div class="success-icon">
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3>Request received!</h3>
+                <p>I'll be in touch within 24 hours to confirm a time. Check your inbox (and spam, just in case).</p>
+              </div>
+            </div>
+
+            <div class="booking-alt">
+              <span>Prefer a direct link?</span>
+              <a href="https://www.futurecraftstudio.ca/appointments" target="_blank" rel="noopener" class="booking-alt-link">View my calendar →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="future-craft-logo.jpg" alt="Future Craft Studio" class="footer-logo-img" />
+        </div>
+        <p class="footer-tagline">Inclusive planning tools. From equity goals to operational decisions.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="#equicity">EquiCity Quickscan</a>
+          <a href="#services">Advisory &amp; Strategy</a>
+          <a href="#services">Capacity Building</a>
+          <a href="#services">Impact Assessment</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Connect</div>
+          <a href="#booking" onclick="event.preventDefault(); document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Book a 15-min call</a>
+          <a href="https://www.linkedin.com/in/eda-acara-74394762" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.futurecraftstudio.ca/contact" target="_blank" rel="noopener">Contact</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>&copy; 2026 Future Craft Studio · Dr. Eda Acara</span>
+        <span>futurecraftstudio.ca</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>

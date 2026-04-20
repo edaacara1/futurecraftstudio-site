@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EquiCity Methodology — Future Craft Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/switzer@1.0.0/switzer.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Page-specific overrides ── */
+    .eq-hero {
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+    .eq-hero .section-label { color: rgba(255,255,255,0.6); }
+    .eq-hero h1 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: var(--text-2xl);
+      font-weight: 500;
+      line-height: 1.12;
+      margin: 0.75rem 0 1.25rem;
+      color: #fff;
+    }
+    .eq-hero h1 em { font-style: italic; opacity: 0.75; }
+    .eq-hero-sub {
+      font-size: var(--text-base);
+      opacity: 0.8;
+      max-width: 560px;
+      line-height: 1.65;
+    }
+    .eq-hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      margin-top: 2rem;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      opacity: 0.6;
+    }
+
+    /* ── Beyond GBA+ strip ── */
+    .beyond-strip {
+      background: var(--color-surface-offset);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+    .beyond-inner {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .beyond-label {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .beyond-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      letter-spacing: 0.05em;
+    }
+    .beyond-items span::before { content: '→ '; color: var(--color-primary); }
+
+    /* ── Five Gaps section ── */
+    .gaps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .gap-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow 0.2s;
+    }
+    .gap-card:hover { box-shadow: var(--shadow-md); }
+    .gap-num {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1;
+      opacity: 0.35;
+    }
+    .gap-tag {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .gap-card h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-text);
+      line-height: 1.3;
+    }
+    .gap-card p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+    .gap-evidence {
+      font-size: 0.72rem;
+      color: var(--color-text-faint);
+      border-top: 1px solid var(--color-divider);
+      padding-top: 0.75rem;
+      margin-top: auto;
+      line-height: 1.5;
+    }
+    .gap-evidence strong { color: var(--color-text-muted); }
+
+    /* ── Products grid ── */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .product-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.2s;
+    }
+    .product-card:hover { box-shadow: var(--shadow-md); }
+    .product-header {
+      background: var(--color-primary-light);
+      padding: 1.5rem 1.75rem 1.25rem;
+      border-bottom: 1px solid var(--color-primary-highlight);
+    }
+    .product-num {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .product-card h3 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+    .product-badge {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: var(--color-primary);
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 99px;
+    }
+    .product-body {
+      padding: 1.5rem 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .product-body p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      line-height: 1.65;
+    }
+    .product-cta {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .product-cta:hover { text-decoration: underline; }
+
+    /* ── Domains section ── */
+    .domains-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .domain-row {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--color-divider);
+      align-items: start;
+    }
+    .domain-row:last-child { border-bottom: none; }
+    .domain-row:nth-child(even) { background: var(--color-surface); }
+    .domain-letter {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      opacity: 0.4;
+      line-height: 1;
+    }
+    .domain-name {
+      font-weight: 600;
+      font-size: var(--text-sm);
+      color: var(--color-text);
+      margin-bottom: 0.5rem;
+    }
+    .domain-questions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .domain-questions li {
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .domain-questions li::before {
+      content: 'Q';
+      position: absolute;
+      left: 0;
+      font-size: 0.65rem;
+      color: var(--color-primary);
+      font-weight: 600;
+      top: 0.1rem;
+    }
+    .domain-tag {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-primary);
+      background: var(--color-primary-light);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+      align-self: flex-start;
+    }
+
+    /* ── CTA band ── */
+    .eq-cta-band {
+      background: var(--color-primary);
+      color: #fff;
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      text-align: center;
+    }
+    .eq-cta-band h2 {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: var(--text-xl);
+      font-weight: 500;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .eq-cta-band p {
+      opacity: 0.75;
+      max-width: 480px;
+      margin: 0 auto 2rem;
+      font-size: var(--text-sm);
+      line-height: 1.65;
+    }
+    .eq-cta-band .btn-primary {
+      background: #fff;
+      color: var(--color-primary);
+    }
+    .eq-cta-band .btn-primary:hover { background: var(--color-primary-light); }
+    .eq-cta-band .btn-ghost {
+      border-color: rgba(255,255,255,0.4);
+      color: #fff;
+    }
+    .eq-cta-band .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+    @media (max-width: 640px) {
+      .domain-row { grid-template-columns: 1fr; gap: 0.5rem; }
+      .domain-letter { font-size: 1.25rem; }
+      .gaps-grid, .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV (matches main site) ── -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Future Craft Studio home">
+      <img src="fcs-logo-mark.jpg" alt="" aria-hidden="true" style="height:40px;width:auto;display:block;object-fit:contain;" />
+      <span>Future Craft Studio</span>
+    </a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="equicity.html" aria-current="page">EquiCity</a></li>
+        <li><a href="index.html#credentials">Credentials</a></li>
+      </ul>
+    </nav>
+    <a href="index.html#booking" class="btn btn-primary btn-sm">Book a call</a>
+  </div>
+</header>
+
+<!-- ── HERO ── -->
+<section class="eq-hero">
+  <div class="container">
+    <div class="section-label">EquiCity Methodology</div>
+    <h1>Inclusion tools built from<br><em>field evidence, not frameworks.</em></h1>
+    <p class="eq-hero-sub">Four free lead products grounded in GESI methodology developed for EBRD Green City Action Plans and World Bank infrastructure projects — designed to go beyond GBA+ and standard risk assessment.</p>
+    <div class="eq-hero-meta">
+      <span>Evidence Base: EBRD Ankara GCAP · World Bank Irrigation · UNDP Türkiye</span>
+      <span>Primary Market: Municipal Teams · Infrastructure Consultancies · Federal Agencies</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEYOND GBA+ STRIP ── -->
+<div class="beyond-strip">
+  <div class="container beyond-inner">
+    <span class="beyond-label">Goes beyond GBA+</span>
+    <div class="beyond-items">
+      <span>Benefit Architecture</span>
+      <span>Care Economy as Prerequisite</span>
+      <span>Data as Power</span>
+      <span>Lifecycle Accountability</span>
+      <span>Spatial Justice</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── FIVE GAPS ── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Methodology</div>
+      <h2 class="section-heading">Five gaps the field hasn't filled yet</h2>
+      <p class="section-sub">Where EquiCity goes beyond GBA+, standard risk assessment, and existing municipal gender toolkits — grounded in documented limitations and field evidence.</p>
+    </div>
+    <div class="gaps-grid">
+
+      <div class="gap-card fade-in">
+        <div class="gap-num">01</div>
+        <span class="gap-tag">Economic Justice</span>
+        <h3>Benefit Architecture: Who Captures the Gains?</h3>
+        <p>GBA+ and most GESI tools identify who is harmed differentially. Almost none ask who captures economic benefits — and what it would take to redirect benefit flows to vulnerable groups. Green transitions create new economic opportunities: green jobs, energy cost savings, procurement contracts. These flows can be designed — but only if the question is asked at planning stage.</p>
+        <div class="gap-evidence"><strong>Verified:</strong> Canada's Auditor General (2022) confirmed GBA+ rarely reaches economic benefit distribution · EBRD GCAP Ankara: energy cooperative model as benefit vehicle</div>
+      </div>
+
+      <div class="gap-card fade-in">
+        <div class="gap-num">02</div>
+        <span class="gap-tag">Care Economy</span>
+        <h3>Care Infrastructure as Green Infrastructure Prerequisite</h3>
+        <p>Existing tools acknowledge care burdens as demographic fact. None treat care infrastructure as a structural prerequisite for green transition to work — or quantify the care penalty in green economy participation. Ankara analysis documented that 70% of children aged 3–6 remain in maternal care, meaning women's participation in green economy jobs is structurally conditional on childcare infrastructure.</p>
+        <div class="gap-evidence"><strong>Verified:</strong> ILO Ankara childcare mapping (Pınarcıoğlu & Soyseçkin, 2018) · GCAP transport sector user experience data · GBA+ guidance has no care economy prerequisite module</div>
+      </div>
+
+      <div class="gap-card fade-in">
+        <div class="gap-num">03</div>
+        <span class="gap-tag">Data Power</span>
+        <h3>Data Invisibility as Structural Problem, Not Technical Gap</h3>
+        <p>GBA+ frames missing data as a methodological limitation to be filled. It does not ask who designed the data architecture, what institutional logic it reflects, or whose labour it was built to render invisible. World Bank irrigation research revealed women water users were systematically absent from the SUTEM database — not because they didn't exist, but because the system was designed around masculine institutional logic.</p>
+        <div class="gap-evidence"><strong>Verified:</strong> WB Irrigation — 18 nominal female WUA members vs. 16 active water users found through qualitative methods · Ankara: "no disaggregated data" appeared across 7 of 7 sectors</div>
+      </div>
+
+      <div class="gap-card fade-in">
+        <div class="gap-num">04</div>
+        <span class="gap-tag">Temporal Justice</span>
+        <h3>Lifecycle Accountability: Do Equity Commitments Survive?</h3>
+        <p>GBA+ is primarily applied at policy design stage. Equity commitments made at design stage routinely disappear under budget pressure, contractor substitution, and political change. Construction, operations, and decommissioning phases create distinct GESI risks that no current tool tracks across the full infrastructure lifecycle.</p>
+        <div class="gap-evidence"><strong>Verified:</strong> Housing, Infrastructure and Communities Canada (2025–26) explicitly flags "timing gaps between commitment, construction, and survey data collection" as a known GBA+ limitation</div>
+      </div>
+
+      <div class="gap-card fade-in">
+        <div class="gap-num">05</div>
+        <span class="gap-tag">Spatial Justice</span>
+        <h3>Core-Periphery Geography: Why Demographics Alone Miss the Point</h3>
+        <p>Standard GESI tools treat "women" or "low-income" as demographic categories. They rarely integrate spatial analysis — mapping where vulnerable populations live relative to infrastructure access and green investments. Ankara documented a systematic pattern: peripheral low-income districts concentrated the highest vulnerability scores across transport, energy, flood risk, and childcare access simultaneously.</p>
+        <div class="gap-evidence"><strong>Verified:</strong> Calgary Equity Index (2024) covers 288 census tracts across 6 domains — no existing GESI toolkit integrates spatial equity mapping with EBRD/World Bank-standard sector assessment</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── QUICKSCAN DOMAINS ── -->
+<section class="section-pad" style="background: var(--color-surface-offset);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">EquiCity Quickscan</div>
+      <h2 class="section-heading">10 questions. 5 domains. One prioritised gap list.</h2>
+      <p class="section-sub">Each question targets a documented failure mode in real infrastructure and green city projects — not a compliance checklist.</p>
+    </div>
+    <div class="domains-list fade-in">
+      <div class="domain-row">
+        <div class="domain-letter">A</div>
+        <div>
+          <div class="domain-name">Data Integrity</div>
+          <ul class="domain-questions">
+            <li>Is baseline data disaggregated by gender, income quintile, and neighbourhood — not just city-wide averages?</li>
+            <li>Are data gaps acknowledged as policy risks — not just technical limitations?</li>
+          </ul>
+        </div>
+        <div><span class="domain-tag">GBA+ gap</span></div>
+      </div>
+      <div class="domain-row">
+        <div class="domain-letter">B</div>
+        <div>
+          <div class="domain-name">Participation Quality</div>
+          <ul class="domain-questions">
+            <li>Were consultations designed for actual attendance by women, low-income residents, and informal workers?</li>
+            <li>Are consultation findings systematically documented and traceable to plan decisions?</li>
+          </ul>
+        </div>
+        <div><span class="domain-tag">Beyond GBA+</span></div>
+      </div>
+      <div class="domain-row">
+        <div class="domain-letter">C</div>
+        <div>
+          <div class="domain-name">Care Economy</div>
+          <ul class="domain-questions">
+            <li>Does the plan account for how the change will shift — or support — unpaid care burdens?</li>
+            <li>Is care infrastructure treated as prerequisite infrastructure — not optional services?</li>
+          </ul>
+        </div>
+        <div><span class="domain-tag">Beyond GBA+</span></div>
+      </div>
+      <div class="domain-row">
+        <div class="domain-letter">D</div>
+        <div>
+          <div class="domain-name">Economic Justice</div>
+          <ul class="domain-questions">
+            <li>Are there explicit mechanisms to direct economic benefits to low-income and women-headed households?</li>
+            <li>Is informal work in affected sectors visible and accounted for in the plan's impact model?</li>
+          </ul>
+        </div>
+        <div><span class="domain-tag">Benefit architecture</span></div>
+      </div>
+      <div class="domain-row">
+        <div class="domain-letter">E</div>
+        <div>
+          <div class="domain-name">Just Transition</div>
+          <ul class="domain-questions">
+            <li>Does the plan assess who bears transition costs — with a mitigation pathway for those groups?</li>
+            <li>Is there a mechanism to track whether equity commitments survive budget cuts and contractor changes?</li>
+          </ul>
+        </div>
+        <div><span class="domain-tag">Beyond GBA+</span></div>
+      </div>
+    </div>
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="btn btn-primary">Take the Quickscan — Free</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOUR PRODUCTS ── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-label">Free Lead Products</div>
+      <h2 class="section-heading">Four tools. All free. All grounded in field evidence.</h2>
+      <p class="section-sub">Each product is a standalone resource — and a window into the deeper advisory, training, and simulation work Future Craft Studio offers.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card fade-in">
+        <div class="product-header">
+          <div class="product-num">Product 01 — Free PDF</div>
+          <h3>EquiCity Quickscan</h3>
+          <span class="product-badge">Free</span>
+        </div>
+        <div class="product-body">
+          <p>A 10-question inclusion risk scan for plans and projects — structured around 5 domains your team can work through in under 30 minutes. Unlike GBA+ compliance checklists, each question targets a documented failure mode in real infrastructure and green city projects.</p>
+          <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="product-cta">Take the scan →</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-header">
+          <div class="product-num">Product 02 — Free Workbook</div>
+          <h3>Indicator Starter Set</h3>
+          <span class="product-badge">Free</span>
+        </div>
+        <div class="product-body">
+          <p>A curated library of 12 GESI indicators across 4 infrastructure sectors — each with definition, unit of measurement, required disaggregation, and source note. Designed for teams that inherit vague equity commitments and need to operationalise them. Goes beyond workforce diversity counts to capture care, spatial, and power dimensions.</p>
+          <a href="index.html#booking" class="product-cta">Request access →</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-header">
+          <div class="product-num">Product 03 — Free PDF</div>
+          <h3>Data Gaps Playcard</h3>
+          <span class="product-badge">Free</span>
+        </div>
+        <div class="product-body">
+          <p>What to do when gender-disaggregated data is missing — without making it worse. Five field-tested strategies for working with institutional data gaps in GESI contexts. Each card is a standalone protocol grounded in real project evidence from the World Bank, EBRD, and municipal fieldwork.</p>
+          <a href="index.html#booking" class="product-cta">Request access →</a>
+        </div>
+      </div>
+
+      <div class="product-card fade-in">
+        <div class="product-header">
+          <div class="product-num">Product 04 — Free Access</div>
+          <h3>Webinar Deck</h3>
+          <span class="product-badge">Free</span>
+        </div>
+        <div class="product-body">
+          <p>"Why Inclusion Matters in Green Transitions" — a ready-to-use internal briefing deck for city teams, infrastructure leads, and sustainability managers. Makes the structural argument that equity is not an add-on to green transitions — it determines whether they succeed or fail.</p>
+          <a href="index.html#booking" class="product-cta">Request access →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BAND ── -->
+<section class="eq-cta-band">
+  <div class="container">
+    <h2>Ready to put this to work on your project?</h2>
+    <p>Book a free 15-minute call with Eda — no pitch, just a direct conversation about what your team actually needs.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="index.html#booking" class="btn btn-primary">Book a free 15-min call</a>
+      <a href="https://www.perplexity.ai/computer/a/equicity-quickscan-future-craf-MJKIacZmRiWHf3gqQi6vKA" target="_blank" rel="noopener" class="btn btn-ghost">Take the Quickscan first</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER (matches main site) ── -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <img src="future-craft-logo.jpg" alt="Future Craft Studio" style="height:56px;width:auto;display:block;object-fit:contain;" />
+      </a>
+      <p class="footer-tagline">Inclusive planning tools that actually get used.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="equicity.html">EquiCity</a>
+      <a href="index.html#credentials">Credentials</a>
+      <a href="index.html#booking">Book a call</a>
+    </nav>
+    <p class="footer-copy">© 2026 Future Craft Studio. Dr. Eda Acara.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll header
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
+</html>
